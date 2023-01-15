@@ -22,6 +22,7 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     include_package_data=True,
+    package_data={"": ["*.crt"]},
     classifiers=[
         # see https://pypi.org/classifiers/
         "Development Status :: 5 - Production/Stable",
