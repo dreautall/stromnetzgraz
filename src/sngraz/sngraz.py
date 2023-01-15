@@ -1,5 +1,5 @@
 import asyncio
-from pathlib import Path
+import os
 from typing import Optional
 import datetime as dt
 import zoneinfo
@@ -36,7 +36,7 @@ class StromNetzGraz:
         if websession is None:
             sslcontext = ssl.create_default_context()
             sslcontext.load_verify_locations(
-                cafile="{}/certchain.crt".format(Path(__file__).parent)
+                cafile=os.path.join(os.path.dirname(__file__), "certchain.crt")
             )
             conn = aiohttp.TCPConnector(ssl=sslcontext)
             self.websession = aiohttp.ClientSession(
