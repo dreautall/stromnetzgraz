@@ -15,8 +15,8 @@ sn = StromNetzGraz(mail, password)
 await sn.authenticate()
 await sn.update_info()
 
-for installation in conn.get_installations():
-    print("Installation ID", installation.id)
+for installation in sn.get_installations():
+    print("Installation ID", installation._installation_id)
     print("Installation is installed at", installation._address)
     for meter in installation.get_meters():
         print("Meter ID", meter.id)
