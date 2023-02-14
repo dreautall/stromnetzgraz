@@ -317,7 +317,7 @@ class SNGrazMeter:
             # note: timezone missing in API reply, let's asume our timezone
             self._first_reading_date = dt.datetime.fromisoformat(
                 resp.get("readingsAvailableSince")
-            ).replace(tzinfo=self._sn_inst._sn.time_zone)
+            ).replace(tzinfo=self._sn_inst._sn.time_zone, minute=0)
 
         return self._first_reading_date
 
