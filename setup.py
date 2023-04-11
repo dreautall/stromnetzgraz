@@ -37,7 +37,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
-    # install_requires=['Pillow'],
+    install_requires=["pyjwt"],
     extras_require={
         "dev": ["check-manifest"],
         # 'test': ['coverage'],
