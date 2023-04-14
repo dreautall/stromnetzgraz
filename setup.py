@@ -37,7 +37,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
-    install_requires=["pyjwt"],
+    install_requires=["pyjwt", "aiohttp"],
     extras_require={
         "dev": ["check-manifest"],
         # 'test': ['coverage'],
