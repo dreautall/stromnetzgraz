@@ -6,7 +6,7 @@ This is a simple client library for the (unofficial) [Stromnetz Graz Smart Meter
 
 Please note that you must be able to login and view data on the portal before this library will work. Please refer to Stromnetz Graz how to set up access to the smart meter statistics. Best results are achieved in the `IME` mode (15 minute reading intervals), however the library can also fall back to `IMS` (daily reading interval). The most recent data available will be the one for the previous day (see also their [FAQ](https://www.stromnetz-graz.at/sgg/stromzaehler/intelligenter-stromzaehler/faqs)).
 
-Example usage:
+## Example
 
 ```python
 from sngraz import StromNetzGraz
@@ -32,3 +32,7 @@ await sn.close_connection()
 An `installation` is usually an house or apartment with an individual address and may contain multiple meters (for example a second meter for a hot water boiler). A `meter` is the actual single meter.
 
 Stromnetz Graz assigns individual numerical IDs to both `installation`s and `meter`s. The usually used meter number (33 characters usually starting with `AT00`) is available as attributes (`meter._name` & `meter._short_name`).
+
+## Home Assistant Integration
+
+This library is used in my Home Assistant Custom Component [ha-stromnetzgraz](https://github.com/dreautall/ha-stromnetzgraz), available via HACS. It allows you to have your Smart Meter readings inside Home Assistant! See the [ha-stromnetzgraz repository](https://github.com/dreautall/ha-stromnetzgraz) for more details.
