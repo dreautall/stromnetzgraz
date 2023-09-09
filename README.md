@@ -29,6 +29,8 @@ for installation in sn.get_installations():
 await sn.close_connection()
 ```
 
+*The example needs to run in an async context, please see [issue #6](https://github.com/dreautall/stromnetzgraz/issues/6) for an example if you want to run it standalone.*
+
 An `installation` is usually an house or apartment with an individual address and may contain multiple meters (for example a second meter for a hot water boiler). A `meter` is the actual single meter.
 
 Stromnetz Graz assigns individual numerical IDs to both `installation`s and `meter`s. The usually used meter number (33 characters usually starting with `AT00`) is available as attributes (`meter._name` & `meter._short_name`).
