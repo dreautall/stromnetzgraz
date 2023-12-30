@@ -416,11 +416,15 @@ class SNGrazMeter:
             startTime += dt.timedelta(days=7)
             endTime = startTime + dt.timedelta(days=7)
 
-        if "MR" not in resp[0]:
+        for res in resp:
+            if "MR" in res:
+                break
+        
+        if "MR" not in res:
             _LOGGER.warning("first reading does not contain a meter reading value")
             return None
 
-        self._first_reading = resp[0].get("MR")
+        self._first_reading = res.get("MR")
         return self._first_reading
 
     @property
